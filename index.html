@@ -12,41 +12,47 @@
     <h1>Order Pizza</h1>
     <div class="container">
       <form id="pizza-choices">
+        <div class="new-pizza" id="pizza1">
+          <div class="radio" id="select-size">
+            <h2>Select pizza size:</h2>
+            <label>
+              <input type="radio" name="pizza-size" value="20" checked>
+              large
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="pizza-size" value="17">
+              medium
+            </label>
+            <br>
+            <label>
+              <input type="radio" name="pizza-size" value="14">
+              small
+            </label>
+            <br>
+          </div>
 
-        <div class="radio" id="select-size">
-          <h2>Select pizza size:</h2>
-          <label>
-            <input type="radio" name="pizza-size" value="20" checked>
-            large
-          </label>
-          <br>
-          <label>
-            <input type="radio" name="pizza-size" value="17">
-            medium
-          </label>
-          <br>
-          <label>
-            <input type="radio" name="pizza-size" value="14">
-            small
-          </label>
-          <br>
+          <div class="form-group" id="select-toppings">
+            <h2>Select toppings:</h2>
+            <input type="checkbox" name="pizza-toppings" value="1"> mushrooms<br>
+            <input type="checkbox" name="pizza-toppings" value="1"> olives<br>
+            <input type="checkbox" name="pizza-toppings" value="2"> pineapple<br>
+            <input type="checkbox" name="pizza-toppings" value="2"> artichokes<br>
+            <input type="checkbox" name="pizza-toppings" value="3"> feta cheese<br>
+            <input type="checkbox" name="pizza-toppings" value="3"> sundried tomatoes<br>
+            <input type="checkbox" name="pizza-toppings" value="2"> pepperoni<br>
+            <input type="checkbox" name="pizza-toppings" value="2"> canadian bacon<br>
+            <input type="checkbox" name="pizza-toppings" value="2"> sausage<br>
+            <input type="checkbox" name="pizza-toppings" value="3"> anchovies<br>
+          </div>
         </div>
 
-        <div class="form-group" id="select-toppings">
-          <h2>Select toppings:</h2>
-          <input type="checkbox" name="pizza-toppings" value="1"> mushrooms<br>
-          <input type="checkbox" name="pizza-toppings" value="1"> olives<br>
-          <input type="checkbox" name="pizza-toppings" value="2"> pineapple<br>
-          <input type="checkbox" name="pizza-toppings" value="2"> artichokes<br>
-          <input type="checkbox" name="pizza-toppings" value="3"> feta cheese<br>
-          <input type="checkbox" name="pizza-toppings" value="3"> sundried tomatoes<br>
-          <input type="checkbox" name="pizza-toppings" value="2"> pepperoni<br>
-          <input type="checkbox" name="pizza-toppings" value="2"> canadian bacon<br>
-          <input type="checkbox" name="pizza-toppings" value="2"> sausage<br>
-          <input type="checkbox" name="pizza-toppings" value="3"> anchovies<br>
+        <div id="new-pizzas">
         </div>
 
-        <button type="submit">How much is my pizza?</button>
+        <span class="btn" id="add-pizza">Add another pizza</span>
+
+        <button type="submit">How much is my order?</button>
 
       </form>
 
