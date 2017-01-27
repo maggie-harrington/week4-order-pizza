@@ -12,7 +12,7 @@
     <h1>Order Pizza</h1>
     <div class="container">
       <form id="pizza-choices">
-        <div class="new-pizza" id="pizza1">
+        <div class="new-pizza col-md-4" id="pizza1">
           <div class="radio" id="select-size">
             <span id="appendNumber"></span>
             <h3>Select pizza size:</h3>
@@ -51,13 +51,16 @@
         <div id="new-pizzas">
         </div>
 
-        <span class="btn btn-primary" id="add-pizza">Add another pizza</span>
-
-        <button type="submit" class="btn btn-success btn-lg">Order total</button>
+        <div class="col-md-12">
+          <br>
+          <br>
+          <span class="btn btn-primary" id="add-pizza">Add another pizza</span><br><br>
+          <button type="submit" class="btn btn-success btn-lg">Order total</button>
+        </div>
 
       </form>
 
-      <div id="display-cost">
+      <div class="col-md-12" id="display-cost">
       </div>
     </div>
   </body>

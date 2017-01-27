@@ -38,7 +38,7 @@ $(document).ready(function() {
     if (pizzaNumber === 2) {
       $("#appendNumber").append('<h2>Pizza ' + (pizzaNumber - 1) + '</h2>');
     }
-    $("#new-pizzas").append('<div class="new-pizza" id="pizza' + pizzaNumber + '">' +
+    $("#new-pizzas").append('<div class="new-pizza col-md-4" id="pizza' + pizzaNumber + '">' +
                               '<div class="radio" id="select-size">' +
                                 '<h2>Pizza ' + pizzaNumber + '</h2>' +
                                 '<h3>Select pizza size:</h3>' +
