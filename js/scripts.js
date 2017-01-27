@@ -29,13 +29,19 @@ Order.prototype.totalCost = function() {
 // front end
 
 $(document).ready(function() {
+  var pizzaNumbers = [1];
   var pizzaNumber = 1;
   $("#add-pizza").click(function() {
     $("#display-cost").empty();
     pizzaNumber ++;
+    pizzaNumbers.push(pizzaNumber);
+    if (pizzaNumber === 2) {
+      $("#appendNumber").append('<h2>Pizza ' + (pizzaNumber - 1) + '</h2>');
+    }
     $("#new-pizzas").append('<div class="new-pizza" id="pizza' + pizzaNumber + '">' +
                               '<div class="radio" id="select-size">' +
-                                '<h2>Select pizza size:</h2>' +
+                                '<h2>Pizza ' + pizzaNumber + '</h2>' +
+                                '<h3>Select pizza size:</h3>' +
                                 '<label>' +
                                   '<input type="radio" name="pizza-size' + pizzaNumber + '" value="20" checked>' +
                                   'large' +
@@ -54,7 +60,7 @@ $(document).ready(function() {
                               '</div>' +
 
                               '<div class="form-group" id="select-toppings' + pizzaNumber + '">' +
-                                '<h2>Select toppings:</h2>' +
+                                '<h3>Select toppings:</h3>' +
                                 '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="1"> mushrooms<br>' +
                                 '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="1"> olives<br>' +
                                 '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> pineapple<br>' +
@@ -89,7 +95,6 @@ $(document).ready(function() {
       });
       var newPizza = new Pizza(pizzaSize, selectedToppings);
 
-      $("#display-cost").append("<h3>Amount due: $" + newPizza.cost() + "</h3>");
 
       orderCost.push(newPizza.cost());
 
@@ -99,6 +104,10 @@ $(document).ready(function() {
     });
 
     var newOrder = new Order(orderCost);
+
+    for (var k = 0; k < orderCost.length; k ++) {
+    $("#display-cost").append("<h3>Pizza " + (k + 1) + ": $" + orderCost[k] + "</h3>");
+    }
 
     $("#display-cost").append("<h3>Total due: $" + newOrder.totalCost() + "</h3>");
 
