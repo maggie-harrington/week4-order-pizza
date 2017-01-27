@@ -1,12 +1,16 @@
 // back end
 
 function Pizza(size, toppings) {
-  this.pizzaSize = size;
+  this.sizeCharge = size;
   this.pizzaToppings = toppings;
 }
 
 Pizza.prototype.cost = function() {
-  return this.pizzaSize + this.pizzaToppings;
+  var toppingsCharge = 0;
+  for (var i = 0; i < this.pizzaToppings.length; i++) {
+    toppingsCharge += this.pizzaToppings[i];
+  }
+  return this.sizeCharge + toppingsCharge;
 }
 
 
@@ -14,15 +18,21 @@ Pizza.prototype.cost = function() {
 
 // front end
 
-
 $(document).ready(function() {
   $("form#pizza-choices").submit(function(event) {
     event.preventDefault();
     $("#display-cost").empty();
-    var sizeCharge = parseInt($("input:radio[name=pizza-size]:checked").val());
-    var newPizza = new Pizza(sizeCharge, 0);
+    
+    var pizzaSize = parseInt($("input:radio[name=pizza-size]:checked").val());
 
+    var selectedToppings = [];
+    $("input:checkbox[name=pizza-toppings]:checked").each(function() {
+      var checkedToppings = parseInt($(this).val());
+      selectedToppings.push(checkedToppings);
+    });
 
-    $("#display-cost").append("<h3>Amount Due: $" + newPizza.cost() + "</h3>");
+    var newPizza = new Pizza(pizzaSize, selectedToppings);
+
+    $("#display-cost").append("<h3>Amount due: $" + newPizza.cost() + "</h3>");
   });
 });
