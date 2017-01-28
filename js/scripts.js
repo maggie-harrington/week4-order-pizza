@@ -31,6 +31,7 @@ Order.prototype.totalCost = function() {
 $(document).ready(function() {
   var pizzaNumbers = [1];
   var pizzaNumber = 1;
+  
   $("#add-pizza").click(function() {
     $("#display-cost").empty();
     pizzaNumber ++;
@@ -38,6 +39,7 @@ $(document).ready(function() {
     if (pizzaNumber === 2) {
       $("#appendNumber").append('<h2>Pizza ' + (pizzaNumber - 1) + '</h2>');
     }
+
     $("#new-pizzas").append('<div class="new-pizza col-md-4" id="pizza' + pizzaNumber + '">' +
                               '<div class="radio" id="select-size">' +
                                 '<h2>Pizza ' + pizzaNumber + '</h2>' +
@@ -78,29 +80,17 @@ $(document).ready(function() {
   $("form#pizza-choices").submit(function(event) {
     event.preventDefault();
     $("#display-cost").empty();
-
     var orderCost = [];
 
     $(".new-pizza").each(function() {
-
-
-
-
       var pizzaSize = parseInt($(this).find("input:radio:checked").val());
-
       var selectedToppings = [];
       $(this).find("input:checkbox:checked").each(function() {
         var checkedToppings = parseInt($(this).val());
         selectedToppings.push(checkedToppings);
       });
       var newPizza = new Pizza(pizzaSize, selectedToppings);
-
-
       orderCost.push(newPizza.cost());
-
-
-
-
     });
 
     var newOrder = new Order(orderCost);
@@ -110,21 +100,5 @@ $(document).ready(function() {
     }
 
     $("#display-cost").append("<h3>Total due: $" + newOrder.totalCost() + "</h3>");
-
-
-
-// original
-
-    // var pizzaSize = parseInt($("input:radio[name=pizza-size]:checked").val());
-    //
-    // var selectedToppings = [];
-    // $("input:checkbox[name=pizza-toppings]:checked").each(function() {
-    //   var checkedToppings = parseInt($(this).val());
-    //   selectedToppings.push(checkedToppings);
-    // });
-    //
-    // var newPizza = new Pizza(pizzaSize, selectedToppings);
-    //
-    // $("#display-cost").append("<h3>Amount due: $" + newPizza.cost() + "</h3>");
   });
 });
