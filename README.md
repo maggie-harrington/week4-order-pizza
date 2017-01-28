@@ -6,14 +6,15 @@
 
 ## Description
 
-_A sample pizza ordering website which allows the user to choose a pizza size and select from a list of toppings. Once the user has created their pizza, the cost of their order is calculated and displayed._
+_A sample pizza ordering website which allows the user to choose a pizza size and select from a list of toppings. The user can choose to order as many different pizzas as they wish. Once the user has finished creating their pizza(s), the cost of their order is calculated and displayed._
 
 ## Specifications
 
 | Behavior | Input Example | Output Example |
 |----------|---------------|----------------|
 | Pizza size is submitted and a base cost is displayed | large pizza | $20 |
-| Toppings are selected and added to the base cost before displaying | large pizza with pineapple | $22 |
+| Toppings are selected and added to the base cost before displaying | large pizza with pineapple | Total due: $22 |
+| Multiple pizzas can be ordered and added to the total cost | large pizza with pepperoni, small pizza with mushrooms and olives | Pizza 1: $22, Pizza 2: $16, Total due: $38 |
 
 ## Setup/Installation Requirements
 
