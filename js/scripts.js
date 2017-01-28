@@ -44,33 +44,33 @@ $(document).ready(function() {
                                 '<h3>Select pizza size:</h3>' +
                                 '<label>' +
                                   '<input type="radio" name="pizza-size' + pizzaNumber + '" value="20" checked>' +
-                                  'large' +
+                                  'large (20)' +
                                 '</label>' +
                                 '<br>' +
                                 '<label>' +
                                   '<input type="radio" name="pizza-size' + pizzaNumber + '" value="17">' +
-                                  'medium' +
+                                  'medium (17)' +
                                 '</label>' +
                                 '<br>' +
                                 '<label>' +
                                   '<input type="radio" name="pizza-size' + pizzaNumber + '" value="14">' +
-                                  'small' +
+                                  'small (14)' +
                                 '</label>' +
                                 '<br>' +
                               '</div>' +
 
                               '<div class="form-group" id="select-toppings' + pizzaNumber + '">' +
                                 '<h3>Select toppings:</h3>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="1"> mushrooms<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="1"> olives<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> pineapple<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> artichokes<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="3"> feta cheese<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="3"> sundried tomatoes<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> pepperoni<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> canadian bacon<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> sausage<br>' +
-                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="3"> anchovies<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="1"> mushrooms (1)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="1"> olives (1)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> pineapple (2)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> artichokes (2)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="3"> feta cheese (3)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="3"> sundried tomatoes (3)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> pepperoni (2)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> canadian bacon (2)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="2"> sausage (2)<br>' +
+                                '<input type="checkbox" name="pizza-toppings' + pizzaNumber + '" value="3"> anchovies (3)<br>' +
                               '</div>' +
                             '</div>');
   });
@@ -106,7 +106,7 @@ $(document).ready(function() {
     var newOrder = new Order(orderCost);
 
     for (var k = 0; k < orderCost.length; k ++) {
-    $("#display-cost").append("<h3>Pizza " + (k + 1) + ": $" + orderCost[k] + "</h3>");
+    $("#display-cost").append("<h4>Pizza " + (k + 1) + ": $" + orderCost[k] + "</h4>");
     }
 
     $("#display-cost").append("<h3>Total due: $" + newOrder.totalCost() + "</h3>");

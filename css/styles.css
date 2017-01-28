@@ -1,0 +1,30 @@
+body {
+  /*padding-left: 100px;*/
+  /*padding-right: 100px;*/
+}
+
+h1 {
+  font-size: 4em;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+p {
+  font-weight: bold;
+  text-align: center;
+}
+
+#buttons {
+  /*text-align: center;*/
+  padding-left: 150px;
+}
+
+#display-cost {
+  padding-top: 50px;
+  padding-left: 150px;
+}
+.new-pizza {
+  padding-top: 50px;
+  padding-left: 150px;
+}
